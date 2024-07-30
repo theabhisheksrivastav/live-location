@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "live location tracker like cab or delivery service using leaflet, socket.io, etc",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "test"
   },
