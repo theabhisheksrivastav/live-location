@@ -1,0 +1,31 @@
+{
+  "name": "live-location",
+  "version": "1.0.0",
+  "description": "live location tracker like cab or delivery service using leaflet, socket.io, etc",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theabhisheksrivastav/live-location.git"
+  },
+  "keywords": [
+    "Live",
+    "location",
+    "map",
+    "socket",
+    "socket.io"
+  ],
+  "author": "abhishek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theabhisheksrivastav/live-location/issues"
+  },
+  "homepage": "https://github.com/theabhisheksrivastav/live-location#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
