@@ -12,3 +12,5 @@ if(navigator.geolocation) {
         timeout: 5000
     });
 }
+
+L.map("map").setView([0, 0], 10);
