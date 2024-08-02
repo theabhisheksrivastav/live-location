@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
-    io.emit('disconnect', socket.id);
+    io.emit('userDisconnect', socket.id);
   });
 
   socket.on('sendLocation', (location) => {
