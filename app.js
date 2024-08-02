@@ -23,10 +23,11 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
+    io.emit('disconnect', socket.id);
   });
 
   socket.on('sendLocation', (location) => {
-    console.log(`Location received: ${location.latitude}, ${location.longitude}`);
+    io.emit('receiveLocation', {id : socket.id, ...location});
   });
 });
 

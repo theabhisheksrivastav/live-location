@@ -14,8 +14,25 @@ if(navigator.geolocation) {
     });
 }
 
-const myMap = L.map("map").setView([0, 0], 10);
+const myMap = L.map("map").setView([0, 0], 14);
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
+
+const marker = L.marker([0, 0]).addTo(myMap);
+
+socket.on('receiveLocation', (location) => {
+    const {id, latitude, longitude } = location;
+    myMap.setView([latitude, longitude], 14);
+    if (marker[id]){
+    marker[id].setLatLng([latitude, longitude]);
+    }
+    else{
+        marker[id] = L.marker([latitude, longitude]).addTo(myMap);
+    }
+});
+
+socket.on('disconnect', (id) => {
+    myMap.removeLayer(marker[id]);
+});
